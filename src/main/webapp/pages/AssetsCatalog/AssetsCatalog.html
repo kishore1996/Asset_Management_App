@@ -1,0 +1,34 @@
+<wm-page pagetitle="Assets Catalog" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-panel iconclass="wi wi-account-circle" autoclose="outsideClick" title="Browse Device Catalog" name="panel1">
+                <wm-panel-footer name="panel_footer1">
+                    <wm-label padding="unset 0.5em" class="text-muted" caption="Addition Info" name="label1"></wm-label>
+                </wm-panel-footer>
+                <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-4 lg-4" class="list-card" name="DeviceInventoryList2" dataset="bind:Variables.AssetsDBDeviceInventoryData1.dataSet" navigation="Basic">
+                    <wm-listtemplate layout="media" name="listtemplate2">
+                        <wm-card name="Picture" picturesource="bind:Variables.AssetsDBDeviceInventoryData1.dataSet.imageurl">
+                            <wm-card-content name="card_content2">
+                                <wm-label name="Name" class="h4" caption="bind:Variables.AssetsDBDeviceInventoryData1.dataSet.catalogName" margin="unset unset 0px unset"></wm-label>
+                                <wm-label name="Model" caption="bind:Variables.AssetsDBDeviceInventoryData1.dataSet.qty" class="p text-muted"></wm-label>
+                                <wm-label name="Quantity" fontsize="1.286" fontunit="em" caption="bind:Variables.AssetsDBDeviceInventoryData1.dataSet.data[$i].cost" margin="unset 0.2em unset unset"></wm-label>
+                                <wm-label name="HelpText" caption="Available"></wm-label>
+                                <wm-label name="Description" class="p text-muted" caption="bind:Variables.AssetsDBDeviceInventoryData1.dataSet.deviceId"></wm-label>
+                            </wm-card-content>
+                            <wm-card-footer horizontalalign="center" name="card_footer2">
+                                <wm-anchor caption="VIEW ALL SPECIFICATIONS" class="btn btn-transparent" name="anchor2"></wm-anchor>
+                            </wm-card-footer>
+                        </wm-card>
+                    </wm-listtemplate>
+                </wm-list>
+                <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-4 lg-4" class="list-card" name="DeviceInventoryList1" dataset="bind:Variables.AssetsDBDeviceInventoryData.dataSet" navigation="Basic">
+                    <wm-listtemplate layout="media" name="listtemplate1"></wm-listtemplate>
+                </wm-list>
+            </wm-panel>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

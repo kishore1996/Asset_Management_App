@@ -1,0 +1,95 @@
+<wm-page pagetitle="Inventory" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-livetable formlayout="dialog" name="DeviceInventoryLiveTable1">
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="DeviceInventoryTable1" title="Device_inventory List" dataset="bind:Variables.AssetsDBDeviceInventoryData.dataSet" navigation="Basic">
+                    <wm-table-column binding="deviceId" caption="Device Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                    <wm-table-column binding="cost" caption="Cost" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-column binding="dateOfPurchase" caption="Date Of Purchase" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                    <wm-table-column binding="displaySize" caption="Display Size" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="imageurl" caption="Imageurl" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="memory" caption="Memory" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="modelId" caption="Model Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="modelName" caption="Model Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="processor" caption="Processor" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="qty" caption="Qty" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow($event)"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow($event)"></wm-table-row-action>
+                </wm-table>
+                <wm-liveform errormessage="" title="Device_inventory Info" formlayout="dialog" iconclass="wi wi-edit" name="DeviceInventoryLiveForm1" dataset="bind:Variables.AssetsDBDeviceInventoryData.dataSet" captionalign="left" captionposition="top">
+                    <wm-layoutgrid columns="3" name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                                <wm-form-field name="cost" displayname="Cost" required="false" show="true" generator="assigned" primary-key="false" key="cost" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn2">
+                                <wm-form-field name="dateOfPurchase" displayname="Date Of Purchase" required="false" show="true" generator="assigned" primary-key="false" key="dateOfPurchase" type="date" is-related="false" pc-display="true" mobile-display="true"
+                                    widget="date"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                <wm-form-field name="displaySize" displayname="Display Size" required="false" show="true" generator="assigned" primary-key="false" key="displaySize" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                                <wm-form-field name="imageurl" displayname="Imageurl" required="false" show="true" generator="assigned" primary-key="false" key="imageurl" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                                <wm-form-field name="memory" displayname="Memory" required="false" show="true" generator="assigned" primary-key="false" key="memory" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                                <wm-form-field name="modelId" displayname="Model Id" required="false" show="true" generator="assigned" primary-key="false" key="modelId" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                                <wm-form-field name="modelName" displayname="Model Name" required="false" show="true" generator="assigned" primary-key="false" key="modelName" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn8">
+                                <wm-form-field name="processor" displayname="Processor" required="false" show="true" generator="assigned" primary-key="false" key="processor" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn9">
+                                <wm-form-field name="qty" displayname="Qty" required="false" show="true" generator="assigned" primary-key="false" key="qty" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow4">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn10">
+                                <wm-form-field name="storage" displayname="Storage" required="false" show="true" generator="assigned" primary-key="false" key="storage" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn11">
+                                <wm-form-field name="warrantExpiryDate" displayname="Warrant Expiry Date" required="false" show="true" generator="assigned" primary-key="false" key="warrantExpiryDate" type="date" is-related="false" pc-display="true" mobile-display="true"
+                                    widget="date"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn12">
+                                <wm-form-field name="yearOfManufacture" displayname="Year Of Manufacture" required="false" show="true" generator="assigned" primary-key="false" key="yearOfManufacture" type="string" is-related="false" maxchars="255" pc-display="true"
+                                    mobile-display="true" widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                                <wm-form-field name="catalogName" displayname="Catalog Name" required="false" show="true" generator="assigned" primary-key="false" key="catalogName" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn14"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn15"></wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="deviceId" displayname="Device Id" required="true" show="false" generator="identity" primary-key="true" key="deviceId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livetable>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

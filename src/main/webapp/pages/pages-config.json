@@ -1,6 +1,14 @@
 [ {
+  "name" : "AssetsCatalog",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Common",
   "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Inventory",
+  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "Login",
@@ -8,6 +16,14 @@
   "params" : [ ]
 }, {
   "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ViewAssets",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ViewRequests",
   "type" : "PAGE",
   "params" : [ ]
 }, {

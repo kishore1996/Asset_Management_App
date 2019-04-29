@@ -1,0 +1,74 @@
+<wm-page pagetitle="View Requests" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-tabs name="tabs1">
+                <wm-tabpane name="tabpane1" title="Pending Requests">
+                    <wm-livetable formlayout="dialog" name="RequestedLiveTable1">
+                        <wm-table gridfirstrowselect="true" editmode="dialog" name="RequestedTable1" title="Requested List" dataset="bind:Variables.AssetsDBRequestedData.dataSet" navigation="Basic">
+                            <wm-table-column binding="id" caption="Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                            <wm-table-column binding="assigned" caption="Assigned" generator="assigned" pcdisplay="true" mobiledisplay="true" type="boolean"></wm-table-column>
+                            <wm-table-column binding="assignedDate" caption="Assigned Date" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                            <wm-table-column binding="requestedDate" caption="Requested Date" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                            <wm-table-column binding="requestedQty" caption="Requested Qty" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                            <wm-table-column binding="assignedQty" caption="Assigned Qty" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                            <wm-table-column binding="department.id" caption="Department Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="Department"></wm-table-column>
+                            <wm-table-column binding="department.departmentName" caption="Department Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Department" readonly="true"></wm-table-column>
+                            <wm-table-column binding="department.password" caption="Department Password" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Department" readonly="true"></wm-table-column>
+                            <wm-table-column binding="department.username" caption="Department Username" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Department" readonly="true"></wm-table-column>
+                            <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                            <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow($event)"></wm-table-row-action>
+                            <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow($event)"></wm-table-row-action>
+                        </wm-table>
+                        <wm-liveform errormessage="" title="Requested Info" formlayout="dialog" iconclass="wi wi-edit" name="RequestedLiveForm1" dataset="bind:Variables.AssetsDBRequestedData.dataSet" captionalign="left" captionposition="top">
+                            <wm-layoutgrid columns="3" name="layoutgrid1">
+                                <wm-gridrow name="gridrow1">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                                        <wm-form-field name="assigned" displayname="Assigned" required="false" show="true" generator="assigned" primary-key="false" key="assigned" type="boolean" is-related="false" defaultvalue="false" pc-display="true" mobile-display="true"
+                                            widget="checkbox"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn2">
+                                        <wm-form-field name="assignedDate" displayname="Assigned Date" required="false" show="true" generator="assigned" primary-key="false" key="assignedDate" type="date" is-related="false" pc-display="true" mobile-display="true"
+                                            widget="date"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                        <wm-form-field name="requestedDate" displayname="Requested Date" required="false" show="true" generator="assigned" primary-key="false" key="requestedDate" type="date" is-related="false" pc-display="true" mobile-display="true"
+                                            widget="date"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow2">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                                        <wm-form-field name="requestedQty" displayname="Requested Qty" required="false" show="true" generator="assigned" primary-key="false" key="requestedQty" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
+                                            widget="number"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                                        <wm-form-field name="assignedQty" displayname="Assigned Qty" required="false" show="true" generator="assigned" primary-key="false" key="assignedQty" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
+                                            widget="number"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                                        <wm-form-field name="department" displayname="Department" required="false" show="true" generator="assigned" primary-key="false" key="department" type="list" is-related="true" pc-display="true" mobile-display="true"
+                                            widget="select"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                                        <wm-form-field name="deviceInventory" displayname="Device Inventory" required="false" show="true" generator="assigned" primary-key="false" key="deviceInventory" type="list" is-related="true" pc-display="true" mobile-display="true"
+                                            widget="select"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn8"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn9"></wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livetable>
+                </wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

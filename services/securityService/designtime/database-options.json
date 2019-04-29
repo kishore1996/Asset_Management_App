@@ -1,0 +1,19 @@
+{
+  "modelName" : "AssetsDB",
+  "entityName" : "Department",
+  "tableName" : "DEPARTMENT",
+  "unamePropertyName" : "username",
+  "unameColumnName" : "USERNAME",
+  "uidPropertyName" : "id",
+  "uidColumnName" : "ID",
+  "pwPropertyName" : "password",
+  "pwColumnName" : "PASSWORD",
+  "rolePropertyName" : "",
+  "roleColumnName" : "",
+  "useRolesQuery" : false,
+  "rolesByUsernameQuery" : "",
+  "tenantIdField" : null,
+  "defTenantId" : 0,
+  "tenantIdPropertyName" : null,
+  "queryType" : "HQL"
+}

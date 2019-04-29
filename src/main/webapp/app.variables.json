@@ -15,6 +15,28 @@
     } ],
     "operation" : "toast"
   },
+  "goToPage_AssetsCatalog" : {
+    "_id" : "wm-goToPage_AssetsCatalog-wm.NavigationVariable-1556465416027",
+    "name" : "goToPage_AssetsCatalog",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "AssetsCatalog",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Inventory" : {
+    "_id" : "wm-goToPage_Inventory-wm.NavigationVariable-1556465432429",
+    "name" : "goToPage_Inventory",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Inventory",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -22,6 +44,74 @@
     "category" : "wm.NavigationVariable",
     "operation" : "gotoPage",
     "pageName" : "Main"
+  },
+  "goToPage_ViewAssets" : {
+    "_id" : "wm-goToPage_ViewAssets-wm.NavigationVariable-1556465928094",
+    "name" : "goToPage_ViewAssets",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ViewAssets",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_ViewRequests" : {
+    "_id" : "wm-goToPage_ViewRequests-wm.NavigationVariable-1556465461322",
+    "name" : "goToPage_ViewRequests",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ViewRequests",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "loggedInUser" : {
+    "_id" : "wm-loggedInUser-wm.Variable-1556528863415",
+    "name" : "loggedInUser",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "",
+      "id" : "",
+      "tenantId" : "",
+      "isAuthenticated" : false,
+      "isSecurityEnabled" : true,
+      "roles" : [ ]
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "loginAction" : {
+    "_id" : "wm-loginAction-wm.LoginVariable-1556528863414",
+    "name" : "loginAction",
+    "owner" : "App",
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ ],
+    "dataSet" : { },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : true
+  },
+  "logoutAction" : {
+    "_id" : "wm-logoutAction-wm.LogoutVariable-1556528863414",
+    "name" : "logoutAction",
+    "owner" : "App",
+    "category" : "wm.LogoutVariable",
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "redirectTo" : "Login",
+    "useDefaultSuccessHandler" : true
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

@@ -1,0 +1,6 @@
+{
+  "id" : "AssetsDB",
+  "type" : "DataService",
+  "packageNames" : [ "com.asset_management_app" ],
+  "title" : "AssetsDB"
+}
